@@ -22,7 +22,7 @@ const HeroSection = () => {
       description: "Free delivery on orders over ₹50",
       image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       cta: "Explore",
-      color: "bg-green-500"
+      color: "from-yellow-400 to-orange-500"
     },
     {
       id: 3,

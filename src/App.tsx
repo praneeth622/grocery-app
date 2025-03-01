@@ -16,6 +16,7 @@ import ShopPage from './pages/ShopPage';
 import CategoriesPage from './pages/CategoriesPage';
 import AboutPage from './pages/AboutPage';
 import { Toaster } from 'react-hot-toast';
+import CheckoutPage from './pages/CheckoutPage';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,6 +76,7 @@ function App() {
                     <Route path="/category/:categorySlug" element={<CategoryPage />} />
                     <Route path="/cart" element={<CartPage />} />
                     <Route path="/about" element={<AboutPage />} />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                   </Routes>
                 </main>
                 <Footer />

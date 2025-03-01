@@ -127,9 +127,9 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors">Home</Link>
+            <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">About</Link>
             <Link to="/shop" className="text-gray-700 hover:text-green-600 font-medium transition-colors">Shop</Link>
             <Link to="/categories" className="text-gray-700 hover:text-green-600 font-medium transition-colors">Categories</Link>
-            <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">About</Link>
           </nav>
 
           {/* Search Bar */}
