@@ -112,7 +112,9 @@ const CartPage = () => {
             </div>
 
             <button className="w-full bg-green-600 text-white py-3 rounded-md hover:bg-green-700 transition-colors mb-4">
+              <a href="/checkout" target="_blank" rel="noreferrer">
               Proceed to Checkout
+              </a>
             </button>
 
             <div className="space-y-3">
