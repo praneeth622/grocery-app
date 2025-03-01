@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 export interface WishlistItem {
   id: number;
@@ -36,16 +37,20 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       const existingItem = prevItems.find(wishlistItem => wishlistItem.id === item.id);
       
       if (existingItem) {
-        // Item already exists, don't add it again
+        toast.error('Item already in wishlist');
         return prevItems;
       } else {
-        // Item doesn't exist, add new item
+        toast.success(`${item.name} added to wishlist`);
         return [...prevItems, item];
       }
     });
   };
 
   const removeFromWishlist = (id: number) => {
+    const item = wishlistItems.find(item => item.id === id);
+    if (item) {
+      toast.success(`${item.name} removed from wishlist`);
+    }
     setWishlistItems(prevItems => prevItems.filter(item => item.id !== id));
   };
 

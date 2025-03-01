@@ -95,12 +95,7 @@ const CartDropdown = () => {
             >
               View Cart
             </Link>
-            <Link
-              to="/checkout"
-              className="block w-full mt-2 border border-green-600 text-green-600 text-center py-2 px-4 rounded-md hover:bg-green-50 transition-colors"
-            >
-              Checkout
-            </Link>
+            
           </div>
         </>
       )}

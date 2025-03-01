@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 export interface CartItem {
   id: number;
@@ -38,7 +39,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const existingItemIndex = prevItems.findIndex(cartItem => cartItem.id === item.id);
       
       if (existingItemIndex >= 0) {
-        // Item exists, update quantity
+        toast.success(`Added another ${item.name} to cart`);
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
           ...updatedItems[existingItemIndex],
@@ -46,13 +47,17 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         };
         return updatedItems;
       } else {
-        // Item doesn't exist, add new item
+        toast.success(`${item.name} added to cart`);
         return [...prevItems, { ...item, quantity: 1 }];
       }
     });
   };
 
   const removeFromCart = (id: number) => {
+    const item = cartItems.find(item => item.id === id);
+    if (item) {
+      toast.success(`${item.name} removed from cart`);
+    }
     setCartItems(prevItems => prevItems.filter(item => item.id !== id));
   };
 
@@ -67,10 +72,16 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         item.id === id ? { ...item, quantity } : item
       )
     );
+    
+    const item = cartItems.find(item => item.id === id);
+    if (item) {
+      toast.success(`Updated ${item.name} quantity to ${quantity}`);
+    }
   };
 
   const clearCart = () => {
     setCartItems([]);
+    toast.success('Cart cleared');
   };
 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);

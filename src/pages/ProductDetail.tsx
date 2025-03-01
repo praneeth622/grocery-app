@@ -5,6 +5,7 @@ import { useCart } from '../context/CartContext';
 import { Product } from '../components/FeaturedProducts';
 import FeaturedProducts from '../components/FeaturedProducts';
 import LoadingSpinner from '../components/SkeletonLoader';
+import toast from 'react-hot-toast';
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -91,6 +92,7 @@ const ProductDetail = () => {
   const handleAddToCart = () => {
     if (product) {
       addToCart({ ...product, quantity });
+      toast.success(`Added ${quantity} ${product.name}${quantity > 1 ? 's' : ''} to cart`);
     }
   };
 

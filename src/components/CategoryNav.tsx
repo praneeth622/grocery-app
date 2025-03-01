@@ -34,7 +34,7 @@ const CategoryNav = ({ title = "Shop by Category" }: CategoryNavProps) => {
           {categories.map((category) => (
             <Link
               key={category.id}
-              to={`/category/${category.slug}`}
+              to={`/categories`}
               className={`${category.color} rounded-lg p-4 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500`}
               style={{ minHeight: '120px' }}
               aria-label={`Browse ${category.name}`}
