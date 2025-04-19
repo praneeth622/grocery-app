@@ -19,10 +19,7 @@ const CategoryNav = ({ title = "Shop by Category" }: CategoryNavProps) => {
     { id: 2, name: "Dairy & Eggs", icon: "🥛", color: "bg-blue-100 text-blue-800", slug: "dairy-eggs" },
     { id: 3, name: "Bakery", icon: "🍞", color: "bg-yellow-100 text-yellow-800", slug: "bakery" },
     { id: 4, name: "Meat & Seafood", icon: "🥩", color: "bg-red-100 text-red-800", slug: "meat-seafood" },
-    { id: 5, name: "Frozen Foods", icon: "❄️", color: "bg-indigo-100 text-indigo-800", slug: "frozen-foods" },
-    { id: 6, name: "Snacks", icon: "🍿", color: "bg-orange-100 text-orange-800", slug: "snacks" },
-    { id: 7, name: "Beverages", icon: "🥤", color: "bg-purple-100 text-purple-800", slug: "beverages" },
-    { id: 8, name: "Organic", icon: "🌱", color: "bg-emerald-100 text-emerald-800", slug: "organic" },
+    { id: 5, name: "Organic Products", icon: "🌱", color: "bg-emerald-100 text-emerald-800", slug: "organic" }
   ];
 
   return (
